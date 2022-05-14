@@ -95,9 +95,11 @@ go.addEventListener('click', () => {
     document.getElementById('processing').classList.add('hidden');
     document.getElementById('processing').classList.remove('inline-flex');
 
-    document.getElementById("result").innerHTML += `
-    <p class="text-2xl text-center font-semibold underline title tracking-widest mb-5">Result</p>
-    `
+    if(error.length > 0 || success.length){
+      document.getElementById("result").innerHTML += `
+      <p class="text-2xl text-center font-semibold underline title tracking-widest mb-5">Result</p>
+      `
+    }
 
     if(error.length > 0){
       document.getElementById("result").innerHTML += `

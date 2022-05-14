@@ -33,6 +33,7 @@ let editor = CodeMirror.fromTextArea(document.getElementById("input"), {
   lineNumbers: true,
   styleActiveLine: true,
   lineWrapping:true,
+  autofocus: true,
 });
 
 function sortFunction(a, b) {

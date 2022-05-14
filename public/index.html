@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/style.css">
+
+  <!-- Primary Meta Tags -->
+  <title>Google Drive Direct Download | Alif</title>
+  <meta name="title" content="Google Drive Direct Download | Alif">
+  <meta name="description" content="Google Drive Direct Download. Website for generate direct download link from google drive.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="Google Drive Direct Download | Alif">
+  <meta property="og:description" content="Google Drive Direct Download. Website for generate direct download link from google drive.">
+  <meta property="og:image" content="https://gddl.alif.my.id/favicon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="Google Drive Direct Download | Alif">
+  <meta property="twitter:description" content="Google Drive Direct Download. Website for generate direct download link from google drive.">
+  <meta property="twitter:image" content="https://gddl.alif.my.id/favicon.png">
+
+  <link rel="stylesheet" href="src/tailwind.css">
+
+  <link rel="stylesheet" href="src/codemirror/codemirror.css">
+  <link rel="stylesheet" href="src/codemirror/vibrant-ink.css">
+  <script src="src/codemirror/codemirror.js"></script>
+  <script src="src/codemirror/active-line.js"></script>
+  <script src="src/codemirror/addon/selection/active-line.js"></script>
+
+
+</head>
+<body class="bg-slate-100">
+<!-- bg gradient green -->
+<!-- <div class="bg-gradient-to-r from-green-400 to-green-600"></div> -->
+  <nav class="bg-gradient-to-r from-green-800 to-green-600 w-full sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="http://127.0.0.1:8000"><span class="title2 text-3xl text-white font-bold tracking-wider title">GDDL</span>
+            </a>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button" class="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="btn">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a href="https://alif.my.id" class="text-gray-100 hover:bg-green-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Author
+              </a>
+              <a href="#" class="text-gray-100 hover:bg-green-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                API Documention
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden hidden " id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+        <a href="https://alif.my.id" class="text-gray-100 hover:bg-green-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          Author
+        </a>
+        <a href="#" class="text-gray-100 hover:bg-green-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          API Documention
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 mt-5 min-h-[75vh]">
+    <p class="text-2xl text-center font-semibold title tracking-widest">Google Drive Direct Download</p>
+
+    <div class="flex justify-center my-7 " id="form">
+      <div class="flex flex-col w-full md:w-3/4">
+        <textarea type="text" name="input" id="input" placeholder="input" class="border w-9" style="height: 150px; width: 300px; white-space: pre-wrap"></textarea>
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full my-3 focus:outline-none focus:ring uppercase" id="go">
+          Generate
+        </button>
+        <button type="button" class="justify-center items-center px-4 py-2 my-3 font-bold  shadow rounded-full text-white bg-green-500 hover:bg-green-400 transition ease-in-out duration-150 cursor-not-allowed hidden uppercase" id="processing">
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Processing...
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col w-full md:w-3/4 mx-auto mb-11 border p-3 rounded-md border-green-700 font-mono text-xs">
+      <p>FAQ :</p>
+      <ul class="list-disc p-[revert]">
+        <li>Multiple URL's allowed</li>
+        <li>One URL per line</li>
+      </ul>
+      <p class="mt-3">Allowed URL formats, example:</p>
+      <ul class="list-disc p-[revert]">
+        <li class="wrap break-all">https://drive.google.com/file/d/__ID_Gdrive_File__/view?usp=sharing</li>
+        <li class="wrap break-all">https://drive.google.com/u/3/uc?id=__ID_Gdrive_File__&export=download</li>
+      </ul>
+    </div>
+
+    <div class="text-center" id="result">
+    </div>
+
+
+  </div>
+  <div x-data class="fixed top-16 right-0 p-4 overflow-x-hidden z-50">
+    <template
+      x-for="(toast, index) in $store.toasts.list"
+      :key="toast.id"
+    >
+      <div
+        x-show="toast.visible"
+        @click="$store.toasts.destroyToast(index)"
+        x-transition:enter="transition ease-in duration-200"
+        x-transition:enter-start="transform opacity-0 translate-y-2"
+        x-transition:enter-end="transform opacity-100"
+        x-transition:leave="transition ease-out duration-500"
+        x-transition:leave-start="transform translate-x-0 opacity-100"
+        x-transition:leave-end="transform translate-x-full opacity-0"
+        class="bg-gray-900 bg-gradient-to-r text-white p-3 rounded mb-3 shadow-lg flex items-center"
+        :class="{
+      'from-blue-500 to-blue-600': toast.type === 'info',
+      'from-green-500 to-green-600': toast.type === 'success',
+      'from-yellow-400 to-yellow-500': toast.type === 'warning',
+      'from-red-500 to-pink-500': toast.type === 'error',
+      }"
+      >
+        <svg
+          x-show="toast.type == 'success'"
+          class="w-6 h-6 mr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <div x-text="toast.message"></div>
+      </div>
+    </template>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/spruce@2.x.x/dist/spruce.umd.js"></script>
+  <script>
+    Spruce.store("toasts", {
+      counter: 0,
+      list: [],
+      createToast(message, type = "info") {
+        const index = this.list.length
+        let totalVisible =
+          this.list.filter((toast) => {
+            return toast.visible
+          }).length + 1
+        this.list.push({
+          id: this.counter++,
+          message,
+          type,
+          visible: true,
+        })
+        setTimeout(() => {
+          this.destroyToast(index)
+        }, 1000 * totalVisible)
+      },
+      destroyToast(index) {
+        this.list[index].visible = false
+      },
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  <script src="src/script.js"></script>
+
+</body>
+</html>

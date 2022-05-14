@@ -1,0 +1,12 @@
+.title{
+  font-family: 'Oooh Baby', cursive;
+
+}
+.CodeMirror {
+    /* font-size: 1.2em; */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ced4da;
+    text-align: left;
+    width: 100%;
+}

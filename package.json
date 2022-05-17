@@ -1,9 +1,12 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch",
+    "build": "npm install date-fns --save && npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch",
     "build-p": "postcss -i ./tailwind.css -o ./public/src/tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
   }
 }

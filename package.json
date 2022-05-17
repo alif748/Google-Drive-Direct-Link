@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npm install date-fns --save && npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch"
+    "build": "npm install date-fns --save && npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --prod"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"

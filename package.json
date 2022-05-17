@@ -1,7 +1,7 @@
 {
   "scripts": {
     "watch": "npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch",
-    "vercel": "npm install date-fns --save && npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css && minify-all-js ./public/src -j -m -M -p"
+    "vercel": "npm install date-fns --save && npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"

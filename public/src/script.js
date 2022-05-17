@@ -8,6 +8,10 @@ btn.addEventListener('click', function () {
   })
 });
 
+document.querySelectorAll('.url').forEach(function(el){
+  el.setAttribute('href', window.location.href);
+});
+
 function copyName(target){
   let item = target.parentNode.parentNode.querySelector('span').innerText
   navigator.clipboard.writeText(item)
@@ -54,6 +58,31 @@ go.addEventListener('click', () => {
   document.getElementById('processing').classList.remove('hidden');
   document.getElementById('processing').classList.add('inline-flex');
 
+  // wait 5s
+  const sleepUntil = async (f, timeoutMs) => {
+    return new Promise((resolve, reject) => {
+      const timeWas = new Date();
+      const wait = setInterval(function() {
+        if (f()) {
+          console.log("resolved after", new Date() - timeWas, "ms");
+          clearInterval(wait);
+          resolve();
+        } else if (new Date() - timeWas > timeoutMs) { // Timeout
+          console.log("rejected after", new Date() - timeWas, "ms");
+          clearInterval(wait);
+          reject();
+        }
+      }, 20);
+    });
+  }
+  sleepUntil(() => document.querySelector('#result').innerText, 5000)
+  .then(() => {
+      // console.log('ok');
+  }).catch(() => {
+      // console.log('timeout');
+      document.getElementById('notif').innerHTML = "The process may take 15 seconds to more";
+  });
+
   let input = editor.getValue().split('\n')
   let success = []
   let error = []
@@ -94,6 +123,7 @@ go.addEventListener('click', () => {
     document.getElementById('go').classList.remove('hidden');
     document.getElementById('processing').classList.add('hidden');
     document.getElementById('processing').classList.remove('inline-flex');
+    document.getElementById('notif').innerHTML = "";
 
     if(error.length > 0 || success.length){
       document.getElementById("result").innerHTML += `

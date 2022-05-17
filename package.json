@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch",
-    "build-p": "postcss -i ./tailwind.css -o ./public/src/tailwind.css --watch"
+    "build": "npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --production",
+    "build-p": "postcss -i ./tailwind.css -o ./public/src/tailwind.css --production"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"

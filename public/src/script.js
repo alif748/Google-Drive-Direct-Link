@@ -148,22 +148,22 @@ go.addEventListener('click', () => {
       }</textarea>
       <div class="border border-red-600 w-fit pt-3 pb-4 px-5 rounded-md mx-auto">
 
-      <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1" onclick="copyNameAll()" x-data
+      <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-green-600" onclick="copyNameAll()" x-data
       @click="$store.toasts.createToast('All File Names Copied!', 'success')">Copy All File Names</button>
-      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1" onclick="copyLinkAll()" x-data
-      @click="$store.toasts.createToast('All Direct Links Copied!', 'success')">Copy All Direct Links</button>
+      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-yellow-600" onclick="copyLinkAll()" x-data
+      @click="$store.toasts.createToast('All Direct Links Copied!', 'warning')">Copy All Direct Links</button>
       </div>
       `
       success.forEach(x => {
         document.getElementById("result").innerHTML += `
-        <div class="card my-5 pb-5 pt-3 border border-slate-400 bg-slate-200 rounded-md">
+        <div class="card my-5 pb-5 pt-3 border border-slate-400 bg-slate-200 rounded-md focus:ring focus:ring-violet-300">
           <div class="card-body">
             <span class="card-title">${x.data.name}</span>
             <span class="card-title">[${x.data.size}]</span>
             <div class="flex flex-wrap justify-center">
-              <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1" onclick="copyName(this)" x-data
+              <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-green-600" onclick="copyName(this)" x-data
               @click="$store.toasts.createToast('File Names Copied!', 'success')">Copy File Name</button>
-              <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1" onclick="copyLink(this)" x-data @click="$store.toasts.createToast('Direct Link Copied!', 'success')">Copy Direct Link</button>
+              <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-yellow-600" onclick="copyLink(this)" x-data @click="$store.toasts.createToast('Direct Link Copied!', 'warning')">Copy Direct Link</button>
               <a href="${x.data.download}" target="_blank" class="mx-1">
                 <button class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none">Download</button>
               </a>

@@ -12,6 +12,12 @@ document.querySelectorAll('.url').forEach(function(el){
   el.setAttribute('href', window.location.href);
 });
 
+function copyWget(target){
+  let name = target.parentNode.parentNode.querySelector('span').innerText
+  let link = target.parentNode.parentNode.querySelector('a').href
+  navigator.clipboard.writeText(`wget "${link}" -O "${name}"`)
+  // alert(`Copied ${item} to clipboard`)
+}
 function copyName(target){
   let item = target.parentNode.parentNode.querySelector('span').innerText
   navigator.clipboard.writeText(item)
@@ -164,6 +170,7 @@ go.addEventListener('click', () => {
               <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-green-600" onclick="copyName(this)" x-data
               @click="$store.toasts.createToast('File Names Copied!', 'success')">Copy File Name</button>
               <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-yellow-600" onclick="copyLink(this)" x-data @click="$store.toasts.createToast('Direct Link Copied!', 'warning')">Copy Direct Link</button>
+              <button class="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-gray-600" onclick="copyWget(this)" x-data @click="$store.toasts.createToast('Wget Code Copied!', 'black')">Copy Wget Code</button>
               <a href="${x.data.download}" target="_blank" class="mx-1">
                 <button class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none">Download</button>
               </a>

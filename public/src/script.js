@@ -38,6 +38,11 @@ function copyLinkAll() {
   navigator.clipboard.writeText(item)
   console.log(item);
 }
+function copySizeAll() {
+  let item = document.getElementById('size').innerText
+  navigator.clipboard.writeText(item)
+  console.log(item);
+}
 
 let editor = CodeMirror.fromTextArea(document.getElementById("input"), {
   lineNumbers: true,
@@ -152,12 +157,17 @@ go.addEventListener('click', () => {
       <textarea id="download" class="hidden">${
         success.map(x => x.data.download).join('\n')
       }</textarea>
+      <textarea id="size" class="hidden">${
+        success.map(x => x.data.size).join('\n')
+      }</textarea>
       <div class="border border-red-600 w-fit pt-3 pb-4 px-5 rounded-md mx-auto">
 
       <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-green-600" onclick="copyNameAll()" x-data
       @click="$store.toasts.createToast('All File Names Copied!', 'success')">Copy All File Names</button>
       <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-yellow-600" onclick="copyLinkAll()" x-data
       @click="$store.toasts.createToast('All Direct Links Copied!', 'warning')">Copy All Direct Links</button>
+      <button class="bg-white hover:bg-gray-200 text-black font-semibold py-1 px-3 mt-1 rounded-md focus:outline-none mx-1 focus:ring focus:ring-gray-400" onclick="copySizeAll()" x-data
+      @click="$store.toasts.createToast('All Size Copied!', 'white')">Copy All Size</button>
       </div>
       `
       success.forEach(x => {

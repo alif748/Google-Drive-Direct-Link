@@ -12,6 +12,6 @@ npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch
 
 ## Donate
 
-![Buy Me a Coffee](https://www.buymeacoffee.com/alifblog)
+[Buy Me a Coffee](https://www.buymeacoffee.com/alifblog)
 
-![Saweria](https://saweria.co/alifm)
+[Saweria](https://saweria.co/alifm)

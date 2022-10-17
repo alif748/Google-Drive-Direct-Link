@@ -99,7 +99,7 @@ go.addEventListener('click', () => {
   let error = []
 
   Promise.all(input.map((x, y) =>
-    fetch('https://api.alif.my.id/gddl', {
+    fetch('http://localhost:3000/gddl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ go.addEventListener('click', () => {
       if (status == "success") {
         // console.log((y+1)+ " : " + res.data.name);
         success.push({
-          'data' : res.data,
+          'data' : res,
           'line'  : (y+1)
       });
       }
@@ -128,6 +128,7 @@ go.addEventListener('click', () => {
     })
   ))
   .then(data => {
+    console.log(success);
     success.sort(sortFunction)
     error.sort((a, b) => {return a-b})
 

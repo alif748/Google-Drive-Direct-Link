@@ -2,8 +2,18 @@
 
 ## Development
 
+Run live server and type this command:
 ```
-npx tailwindcss -i ./tailwind.css -o ./public/src/tailwind.css --watch
+npm run watch
+```
+
+open `public/index.html`
+
+## Deploy
+
+Varcel command
+```
+npm run vercel
 ```
 
 ## API docs

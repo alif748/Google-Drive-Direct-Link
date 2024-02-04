@@ -99,7 +99,7 @@ go.addEventListener('click', () => {
   let error = []
 
   Promise.all(input.map((x, y) =>
-    fetch('https://api.alif.my.id/gddl', {
+    fetch('https://api.alifm.net/gddl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
